@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Demo App</title>
+</head>
+<body>
+<h1 th:text="${course != null ? course.name : 'Course not found'}"></h1>
+<h3 th:text="${'Lecturer of the course: ' + course.lecturer.name}"></h3>
+
+<a th:if="${course != null}" th:href="@{'/courses/' + ${course.id} + '/edit'}">Edit Course</a><br>
+<a th:if="${course != null}" th:href="@{'/courses/' + ${course.id} + '/delete'}">Delete Course</a><br>
+
+<br>
+
+<a th:href="@{/courses/}">Back to List</a>
+</body>
+</html>

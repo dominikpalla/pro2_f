@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Demo App</title>
+</head>
+<body>
+<h1 th:text="${edit ? 'Edit Course' : 'Add New Course'}"></h1>
+
+<form method="post" th:action="@{/courses/add}" th:object="${course}">
+    <input type="hidden" th:field="*{id}">
+    Name: <input type="text" th:field="*{name}"><br>
+    Lecturer:
+    <select th:field="*{lecturer}">
+        <option th:each="lecturer: ${lecturers}"
+                th:value="${lecturer.id}" th:text="${lecturer.name}"></option>
+    </select>
+    <br>
+    <input type="submit" value="Save">
+</form>
+
+</body>
+</html>

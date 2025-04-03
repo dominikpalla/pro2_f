@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Demo App</title>
+</head>
+<body>
+<h1 th:text="${lecturer != null ? lecturer.name : 'Lecturer not found'}"></h1>
+
+<a th:if="${lecturer != null}" th:href="@{'/lecturers/' + ${lecturer.id} + '/edit'}">Edit Lecturer</a><br>
+<a th:if="${lecturer != null}" th:href="@{'/lecturers/' + ${lecturer.id} + '/delete'}">Delete Lecturer</a><br>
+
+<br>
+
+<a th:href="@{/lecturers/}">Back to List</a>
+</body>
+</html>
